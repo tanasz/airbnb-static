@@ -1,6 +1,20 @@
-- city: Paris
-  image: romain.jpeg
-- city: Brussels
-  image: anne.jpg
-- city: London
-  image: seb.jpeg
+Paris:
+  friend: Seb
+  avatar: seb.jpg
+  card: card-paris.jpg
+  description: Charming room with patio
+Brussels:
+  friend: Anne
+  avatar: anne.jpg
+  card: card-brussels.jpeg
+  description: Charming room with hamac
+London:
+  friend: Romain
+  avatar: romain.jpeg
+  card: card-london.jpeg
+  description: Charming room with a view
+Agen:
+  friend: Yannick
+  avatar: yannick.jpeg
+  card: card-agen.jpg
+  description: Charming ville with a canal

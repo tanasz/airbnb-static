@@ -24,73 +24,38 @@ profile: "profile.jpg"
     <!-- ICONS -->
     <div class="container text-center padded features">
       <div class="row">
+        <% data.index.each do |todo, data| %> <!-- début boucle -->
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/globe.png" alt="">
-          <h2>Discover the world</h2>
-          <p>The earth is your new home.</p>
+          <%= image_tag data.image  %>
+          <h2><%= todo %></h2>
+          <p><%= data.tagline %></p>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/dollar.png" alt="">
-          <h2>Pay online</h2>
-          <p>No cash issues anymore.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/beer.png" alt="">
-          <h2>Meet people</h2>
-          <p>Discover new culture and lifestyle.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/heart.png" alt="">
-          <h2>Share and love</h2>
-          <p>Join a community you will love.</p>
-        </div>
+        <% end %><!-- fin boucle -->
       </div>
     </div>
+
     <div class="wrapper-grey padded">
       <div class="container">
         <h2 class="text-center">Your next trip</h2>
 
         <!-- CARDS -->
-
         <div class="row">
-          <div class="col-xs-12 col-sm-4">
+          <% data.cities.each do |city, data| %> <!-- début boucle -->
+          <div class="col-xs-12 col-sm-3">
+          <% images_complete = "images/#{data.card}" %>
             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url('images/card-paris.jpg');">
-              <div class="card-category">Paris</div>
+              url(<%= images_complete %>);">
+              <div class="card-category"><%= "#{city}" %></div>
               <div class="card-description">
-                <h2>Seb's home</h2>
-                <p>Charming room with patio</p>
+                <h2><%= "#{data.friend.capitalize}'s home" %></h2>
+                <p><%= "#{data.description.capitalize}" %></p>
               </div>
-              <%= image_tag "images/seb.jpg", class: "card-user avatar avatar-large" %>
+              <%= image_tag data.avatar, class: "card-user avatar avatar-large" %>
               <%= link_to "&nbsp;", "#", class: "card-link" %>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
-              <div class="card-category">Brussels</div>
-              <div class="card-description">
-                <h2>Anne's home</h2>
-                <p>Lovely house</p>
-              </div>
-              <%= image_tag "images/anne.jpg", class: "card-user avatar avatar-large" %>
-              <%= link_to "&nbsp;", "#", class: "card-link" %>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
-              <div class="card-category">London</div>
-              <div class="card-description">
-                <h2>Romain's home</h2>
-                <p>Nice flat in Piccadilly</p>
-              </div>
-              <%= image_tag "images/romain.jpeg", class: "card-user avatar avatar-large" %>
-              <%= link_to "&nbsp;", "#", class: "card-link" %>
-            </div>
-          </div>
+          <% end %> <!-- fin boucle -->
         </div>
-
-
-
 
       </div>
     </div>
@@ -124,9 +89,3 @@ profile: "profile.jpg"
       title:"You are here!"
     });
     </script>
-
-    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-</html>

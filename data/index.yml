@@ -1,7 +1,12 @@
-- title: "Yaourt"
-- machin1: Bla1
-  sousmachin1: blabla1
-- machin2: Bla2
-  sousmachin2: blabla2
-- machin3: Bla3
-  sousmachin3: blabla3
+Discover the world:
+  tagline: The earth is your new home.
+  image: globe.png
+Pay online:
+  tagline: No cash issues anymore.
+  image: dollar.png
+Meet people:
+  tagline: Discover new culture and lifestyle.
+  image: beer.png
+Share and love:
+  tagline: Join a community you will love.
+  image: heart.png
