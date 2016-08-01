@@ -40,17 +40,20 @@ profile: "profile.jpg"
 
         <!-- CARDS -->
         <div class="row">
-          <% data.cities.each do |city, data| %> <!-- début boucle -->
-          <div class="col-xs-12 col-sm-3">
-          <% images_complete = "images/#{data.card}" %>
+          <% taille = 12 / data.cities.count.to_i %>
+          <% style = "col-xs-12 col-md-#{taille.to_s}" %>
+          <% ligne = "<div class='" + style + "'>" %>
+          <% data.cities.each do |city, datas| %> <!-- début boucle -->
+          <%= ligne %>
+          <% images_complete = "images/#{datas.card}" %>
             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
               url(<%= images_complete %>);">
               <div class="card-category"><%= "#{city}" %></div>
               <div class="card-description">
-                <h2><%= "#{data.friend.capitalize}'s home" %></h2>
-                <p><%= "#{data.description.capitalize}" %></p>
+                <h2><%= "#{datas.friend.capitalize}'s home" %></h2>
+                <p><%= "#{datas.description.capitalize}" %></p>
               </div>
-              <%= image_tag data.avatar, class: "card-user avatar avatar-large" %>
+              <%= image_tag datas.avatar, class: "card-user avatar avatar-large" %>
               <%= link_to "&nbsp;", "#", class: "card-link" %>
             </div>
           </div>

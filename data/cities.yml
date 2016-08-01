@@ -18,3 +18,13 @@ Agen:
   avatar: yannick.jpeg
   card: card-agen.jpg
   description: Charming ville with a canal
+Montpellier:
+  friend: Jonathan
+  avatar: jonathan.png
+  card: card-montpellier.jpg
+  description: Charming city
+Bordeaux:
+  friend: Charly
+  avatar: charly.jpeg
+  card: card-bordeaux.jpg
+  description: Charming town with a dev
